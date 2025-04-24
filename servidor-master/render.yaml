@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: gps-flask-render
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn servidor:app
+    plan: free
+    envVars:
+      - key: FIREBASE_CREDENTIALS
+        sync: false
